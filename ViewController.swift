@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     var highlightedRow: [UIButton]?
     var isTop = false
     var currentRow: Int = 1
+    var deck: Deck?
+    var bottomLastRow: [Int: UIImage] = [:]
+    var topLastRow: [Int: UIImage] = [:]
 
     //MARK: - Outlets
 
@@ -33,11 +36,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var deckButton: UIButton!
     @IBOutlet weak var flopButton: UIButton!
+    @IBOutlet var bottomCollumn1Cards: [UIButton]!
+    @IBOutlet var bottomCollumn2Cards: [UIButton]!
+    @IBOutlet var bottomCollumn3Cards: [UIButton]!
+    @IBOutlet var bottomCollumn4Cards: [UIButton]!
+    @IBOutlet var bottomCollumn5Cards: [UIButton]!
     @IBOutlet var bottomRow1Cards: [UIButton]!
     @IBOutlet var bottomRow2Cards: [UIButton]!
     @IBOutlet var bottomRow3Cards: [UIButton]!
     @IBOutlet var bottomRow4Cards: [UIButton]!
     @IBOutlet var bottomRow5Cards: [UIButton]!
+    @IBOutlet var topCollumn1Cards: [UIButton]!
+    @IBOutlet var topCollumn2Cards: [UIButton]!
+    @IBOutlet var topCollumn3Cards: [UIButton]!
+    @IBOutlet var topCollumn4Cards: [UIButton]!
+    @IBOutlet var topCollumn5Cards: [UIButton]!
     @IBOutlet var topRow1Cards: [UIButton]!
     @IBOutlet var topRow2Cards: [UIButton]!
     @IBOutlet var topRow3Cards: [UIButton]!
@@ -72,6 +85,7 @@ class ViewController: UIViewController {
                 self.logoImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
             }
         }
+        deck = Evaluator.shared.deck
     }
 
     private func clearRow(_ buttons: [UIButton]) {
@@ -145,10 +159,43 @@ class ViewController: UIViewController {
         }
         return isLastInRow
     }
+    
+    private func finishGame() {
+        deckButton.isHidden = true
+        logoImageView.isHidden = true
+        for button in bottomRow5Cards {
+            let buttonIndex = bottomRow5Cards.firstIndex(of: button)
+            let image = bottomLastRow[buttonIndex?.hashValue ?? 0]
+            button.setBackgroundImage(image, for: .normal)
+        }
+        for button in topRow5Cards {
+            let buttonIndex = topRow5Cards.firstIndex(of: button)
+            let image = topLastRow[buttonIndex?.hashValue ?? 0]
+            button.setBackgroundImage(image, for: .normal)
+        }
+    }
+
+    private func rankHands(_ hand1: [String], _ hand2: [String]) -> [Int:Any] {
+        var hands: [Int:Any] = [:]
+        let handRank1 = Evaluator.shared.evaluate(cards: hand1)
+        let handRank2 = Evaluator.shared.evaluate(cards: hand2)
+        if handRank1.rank < handRank2.rank {
+            hands[1] = handRank1
+            hands[2] = 1
+        } else {
+            hands[1] = handRank2
+            hands[2] = 2
+        }
+        return hands
+    }
 
     //MARK: - Actions
 
     @IBAction func deckTapped(_ sender: Any) {
+        guard let card = deck?.cards.popFirst() else {
+            return
+        }
+        flopButton.setBackgroundImage(UIImage(named: "Deck/\(card.key)"), for: .normal)
         if isTop == true {
             UIView.animate(withDuration: 1.0) {
                 self.logoImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
@@ -188,13 +235,19 @@ class ViewController: UIViewController {
         }
         highlightRow(highlightedRow ?? [])
         unhighlightRow([deckButton])
-        flopButton.setBackgroundImage(UIImage(named: "2♣"), for: .normal)
     }
 
     @IBAction func cardTapped(_ sender: UIButton) {
         if checkIfInLastRow(sender) == false {
             sender.setBackgroundImage(flopButton.backgroundImage(for: .normal), for: .normal)
         } else {
+            if isTop == true {
+                let buttonIndex = topRow5Cards.firstIndex(of: sender)
+                topLastRow[buttonIndex?.hashValue ?? 0] = flopButton.backgroundImage(for: .normal) ?? UIImage()
+            } else {
+                let buttonIndex = bottomRow5Cards.firstIndex(of: sender)
+                bottomLastRow[buttonIndex?.hashValue ?? 0] = flopButton.backgroundImage(for: .normal) ?? UIImage()
+            }
             sender.setBackgroundImage(deckButton.backgroundImage(for: .normal), for: .normal)
         }
         sender.isUserInteractionEnabled = false
@@ -212,6 +265,13 @@ class ViewController: UIViewController {
                     highlightedRow = bottomRow4Cards
                 case 5:
                     highlightedRow = bottomRow5Cards
+                case 6:
+                    UIView.animate(withDuration: 1.0) {
+                        self.logoImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi*2))
+                    }
+                    isTop = !isTop
+                    unhighlightRow(oldHighlightedRow ?? [])
+                    self.finishGame()
                 default:
                     return
                 }

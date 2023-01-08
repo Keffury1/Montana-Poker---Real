@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DEx-nF-HvP">
-                                <rect key="frame" x="10" y="44" width="394" height="818"/>
+                                <rect key="frame" x="10" y="48" width="394" height="814"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pFD-qU-zeB">
-                                        <rect key="frame" x="25" y="474" width="344" height="91"/>
+                                        <rect key="frame" x="25" y="472" width="344" height="91"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-30" translatesAutoresizingMaskIntoConstraints="NO" id="VIq-g1-Omc">
                                                 <rect key="frame" x="0.0" y="0.0" width="61" height="91"/>
@@ -240,7 +241,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="n3c-S5-PRJ">
-                                        <rect key="frame" x="25" y="253" width="344" height="91"/>
+                                        <rect key="frame" x="25" y="251" width="344" height="91"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-30" translatesAutoresizingMaskIntoConstraints="NO" id="hfL-42-BFx">
                                                 <rect key="frame" x="0.0" y="0.0" width="61" height="91"/>
@@ -460,21 +461,21 @@
                                         </subviews>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="gfq-o1-Fua">
-                                        <rect key="frame" x="147" y="359" width="100" height="100"/>
+                                        <rect key="frame" x="147" y="357" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="Vka-tC-ddN"/>
                                             <constraint firstAttribute="width" constant="100" id="gww-Yj-VHL"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="de3-qS-h3T">
-                                        <rect key="frame" x="56" y="363.5" width="61" height="91"/>
+                                        <rect key="frame" x="56" y="361.5" width="61" height="91"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <connections>
                                             <action selector="deckTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zCY-i2-yke"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EI1-aA-lCm">
-                                        <rect key="frame" x="277" y="363.5" width="61" height="91"/>
+                                        <rect key="frame" x="277" y="361.5" width="61" height="91"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     </button>
                                 </subviews>
@@ -575,6 +576,52 @@
                         <outletCollection property="topRow5Cards" destination="ms7-Ok-CLu" collectionClass="NSMutableArray" id="COf-bf-1AR"/>
                         <outletCollection property="topRow5Cards" destination="Y9P-sY-8pb" collectionClass="NSMutableArray" id="8QS-BU-a65"/>
                         <outletCollection property="topRow5Cards" destination="RxX-g4-P30" collectionClass="NSMutableArray" id="sO0-pg-GKA"/>
+                        <outletCollection property="bottomCollumn1Cards" destination="0Yx-gq-jpZ" collectionClass="NSMutableArray" id="jhc-6S-VHh"/>
+                        <outletCollection property="bottomCollumn1Cards" destination="kaM-xr-3Cx" collectionClass="NSMutableArray" id="5zx-Ti-Bi7"/>
+                        <outletCollection property="bottomCollumn1Cards" destination="0Zt-Dz-KpY" collectionClass="NSMutableArray" id="wH8-fw-hk0"/>
+                        <outletCollection property="bottomCollumn1Cards" destination="KgU-FT-hmX" collectionClass="NSMutableArray" id="zdC-Zd-uqI"/>
+                        <outletCollection property="bottomCollumn1Cards" destination="hCR-YT-UaI" collectionClass="NSMutableArray" id="2nw-4P-GLr"/>
+                        <outletCollection property="bottomCollumn2Cards" destination="k1c-37-bXf" collectionClass="NSMutableArray" id="gwi-Nn-hbM"/>
+                        <outletCollection property="bottomCollumn2Cards" destination="ZBn-Ko-Knc" collectionClass="NSMutableArray" id="Ph6-yu-VBl"/>
+                        <outletCollection property="bottomCollumn2Cards" destination="l7f-Da-rdY" collectionClass="NSMutableArray" id="qnX-uD-3rL"/>
+                        <outletCollection property="bottomCollumn2Cards" destination="bdF-Ch-9pH" collectionClass="NSMutableArray" id="nGs-Sp-McZ"/>
+                        <outletCollection property="bottomCollumn2Cards" destination="zFd-zn-PXD" collectionClass="NSMutableArray" id="t5O-QY-l9H"/>
+                        <outletCollection property="bottomCollumn3Cards" destination="3gp-7l-ujd" collectionClass="NSMutableArray" id="6Im-dU-1FH"/>
+                        <outletCollection property="bottomCollumn3Cards" destination="acE-yR-SRi" collectionClass="NSMutableArray" id="Xij-4g-nwU"/>
+                        <outletCollection property="bottomCollumn3Cards" destination="eHZ-h9-dDl" collectionClass="NSMutableArray" id="yHa-YR-AcU"/>
+                        <outletCollection property="bottomCollumn3Cards" destination="pF8-hR-v7X" collectionClass="NSMutableArray" id="72Q-2c-6ya"/>
+                        <outletCollection property="bottomCollumn3Cards" destination="UFu-5N-SSa" collectionClass="NSMutableArray" id="9HT-IN-fTF"/>
+                        <outletCollection property="bottomCollumn4Cards" destination="wmm-Y4-oSf" collectionClass="NSMutableArray" id="OSb-p6-DsU"/>
+                        <outletCollection property="bottomCollumn4Cards" destination="OPN-PR-XZN" collectionClass="NSMutableArray" id="hBp-ra-C6Q"/>
+                        <outletCollection property="bottomCollumn4Cards" destination="qKx-5p-qC0" collectionClass="NSMutableArray" id="5l8-nq-Un0"/>
+                        <outletCollection property="bottomCollumn4Cards" destination="Gx5-Qq-aB8" collectionClass="NSMutableArray" id="4Zg-RA-9sy"/>
+                        <outletCollection property="bottomCollumn4Cards" destination="RAt-jM-wvL" collectionClass="NSMutableArray" id="YdU-AD-77p"/>
+                        <outletCollection property="bottomCollumn5Cards" destination="cm5-Ia-G7S" collectionClass="NSMutableArray" id="ayT-3H-JJG"/>
+                        <outletCollection property="bottomCollumn5Cards" destination="Yso-uJ-K4w" collectionClass="NSMutableArray" id="qfJ-v9-DTp"/>
+                        <outletCollection property="bottomCollumn5Cards" destination="Wxv-V0-j9p" collectionClass="NSMutableArray" id="HDf-FC-Kdt"/>
+                        <outletCollection property="bottomCollumn5Cards" destination="Nrx-RY-ofx" collectionClass="NSMutableArray" id="jF1-LN-ZFU"/>
+                        <outletCollection property="bottomCollumn5Cards" destination="yEG-YC-73h" collectionClass="NSMutableArray" id="7hp-JU-I4H"/>
+                        <outletCollection property="topCollumn1Cards" destination="gmB-FS-FBS" collectionClass="NSMutableArray" id="1ps-TH-Jga"/>
+                        <outletCollection property="topCollumn1Cards" destination="1pA-QE-IHg" collectionClass="NSMutableArray" id="2ov-fp-Ta5"/>
+                        <outletCollection property="topCollumn1Cards" destination="HUd-zU-I4b" collectionClass="NSMutableArray" id="quH-z5-yfc"/>
+                        <outletCollection property="topCollumn1Cards" destination="Zpp-j6-Jzf" collectionClass="NSMutableArray" id="1eF-Nj-NNG"/>
+                        <outletCollection property="topCollumn1Cards" destination="dnW-5u-9xm" collectionClass="NSMutableArray" id="dnM-ue-Cqc"/>
+                        <outletCollection property="topCollumn2Cards" destination="C43-Ai-WDY" collectionClass="NSMutableArray" id="Ei4-5J-OEF"/>
+                        <outletCollection property="topCollumn2Cards" destination="Ui7-m4-0YX" collectionClass="NSMutableArray" id="JvR-OY-LKK"/>
+                        <outletCollection property="topCollumn2Cards" destination="EU9-Uc-IDV" collectionClass="NSMutableArray" id="j7F-kh-doX"/>
+                        <outletCollection property="topCollumn2Cards" destination="WHT-L9-2pG" collectionClass="NSMutableArray" id="fBY-Xn-nzB"/>
+                        <outletCollection property="topCollumn2Cards" destination="pLZ-dj-29n" collectionClass="NSMutableArray" id="btJ-7K-2Vv"/>
+                        <outletCollection property="topCollumn3Cards" destination="ms7-Ok-CLu" collectionClass="NSMutableArray" id="tyy-9P-vrY"/>
+                        <outletCollection property="topCollumn3Cards" destination="J2c-Nk-hNr" collectionClass="NSMutableArray" id="9Xx-Cm-qSR"/>
+                        <outletCollection property="topCollumn3Cards" destination="VLe-Uf-Laz" collectionClass="NSMutableArray" id="dDM-kf-oJi"/>
+                        <outletCollection property="topCollumn3Cards" destination="B97-js-ShE" collectionClass="NSMutableArray" id="J1h-iI-GHr"/>
+                        <outletCollection property="topCollumn3Cards" destination="et6-Lb-XKd" collectionClass="NSMutableArray" id="Jvb-qt-m3P"/>
+                        <outletCollection property="topCollumn4Cards" destination="Y9P-sY-8pb" collectionClass="NSMutableArray" id="huF-ZL-w9h"/>
+                        <outletCollection property="topCollumn4Cards" destination="hXN-1W-4AV" collectionClass="NSMutableArray" id="RhL-gf-tKo"/>
+                        <outletCollection property="topCollumn4Cards" destination="C71-5i-lR8" collectionClass="NSMutableArray" id="pfb-lB-UGX"/>
+                        <outletCollection property="topCollumn4Cards" destination="wrh-Nt-AwM" collectionClass="NSMutableArray" id="Cjx-io-1U3"/>
+                        <outletCollection property="topCollumn4Cards" destination="FJ8-i3-BAn" collectionClass="NSMutableArray" id="25u-6q-klq"/>
+                        <outletCollection property="topCollumn5Cards" destination="RxX-g4-P30" collectionClass="NSMutableArray" id="gSk-fA-eu0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

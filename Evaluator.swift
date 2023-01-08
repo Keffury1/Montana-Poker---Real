@@ -93,6 +93,7 @@ func == (lhs: HandRank, rhs: HandRank) -> Bool {
 
 class Evaluator {
     var deck = Deck()
+    static let shared = Evaluator()
 
     func evaluate(cards:[String]) -> HandRank {
         let cardValues = cards.map { self.deck.as_binary(card: $0) }
