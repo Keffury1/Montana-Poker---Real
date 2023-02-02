@@ -460,6 +460,43 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z67-xQ-6a7">
+                                        <rect key="frame" x="25" y="342" width="344" height="130"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="INT-aX-AXi">
+                                                <rect key="frame" x="0.0" y="5" width="344" height="120"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ick-rq-1dw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="61" height="120"/>
+                                                        <color key="backgroundColor" name="Wood"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d76-kX-BOu">
+                                                        <rect key="frame" x="71" y="0.0" width="60.5" height="120"/>
+                                                        <color key="backgroundColor" name="Wood"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tfd-wa-qPi">
+                                                        <rect key="frame" x="141.5" y="0.0" width="61" height="120"/>
+                                                        <color key="backgroundColor" name="Wood"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M0v-H9-NqP">
+                                                        <rect key="frame" x="212.5" y="0.0" width="60.5" height="120"/>
+                                                        <color key="backgroundColor" name="Wood"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ajh-59-OSh">
+                                                        <rect key="frame" x="283" y="0.0" width="61" height="120"/>
+                                                        <color key="backgroundColor" name="Wood"/>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="Felt"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="INT-aX-AXi" secondAttribute="bottom" constant="5" id="B7V-IA-gsS"/>
+                                            <constraint firstItem="INT-aX-AXi" firstAttribute="leading" secondItem="Z67-xQ-6a7" secondAttribute="leading" id="Hf0-IE-KJU"/>
+                                            <constraint firstAttribute="trailing" secondItem="INT-aX-AXi" secondAttribute="trailing" id="o5P-lS-Co8"/>
+                                            <constraint firstItem="INT-aX-AXi" firstAttribute="top" secondItem="Z67-xQ-6a7" secondAttribute="top" constant="5" id="s6K-Yy-mWG"/>
+                                        </constraints>
+                                    </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="gfq-o1-Fua">
                                         <rect key="frame" x="147" y="357" width="100" height="100"/>
                                         <constraints>
@@ -483,7 +520,10 @@
                                 <constraints>
                                     <constraint firstItem="gfq-o1-Fua" firstAttribute="leading" secondItem="de3-qS-h3T" secondAttribute="trailing" constant="30" id="0Ns-Gl-jip"/>
                                     <constraint firstItem="pFD-qU-zeB" firstAttribute="top" secondItem="gfq-o1-Fua" secondAttribute="bottom" constant="15" id="3Vo-5A-JzV"/>
+                                    <constraint firstItem="Z67-xQ-6a7" firstAttribute="leading" secondItem="pFD-qU-zeB" secondAttribute="leading" id="3mi-4o-Bup"/>
                                     <constraint firstItem="EI1-aA-lCm" firstAttribute="leading" secondItem="gfq-o1-Fua" secondAttribute="trailing" constant="30" id="7mp-nd-mJC"/>
+                                    <constraint firstItem="Z67-xQ-6a7" firstAttribute="top" secondItem="n3c-S5-PRJ" secondAttribute="bottom" id="C16-Mj-Sor"/>
+                                    <constraint firstItem="pFD-qU-zeB" firstAttribute="top" secondItem="Z67-xQ-6a7" secondAttribute="bottom" id="FSV-vp-vIS"/>
                                     <constraint firstAttribute="trailing" secondItem="pFD-qU-zeB" secondAttribute="trailing" constant="25" id="Hcs-2y-5vf"/>
                                     <constraint firstAttribute="trailing" secondItem="n3c-S5-PRJ" secondAttribute="trailing" constant="25" id="HyS-sz-o11"/>
                                     <constraint firstItem="de3-qS-h3T" firstAttribute="centerY" secondItem="DEx-nF-HvP" secondAttribute="centerY" id="MDm-06-wkN"/>
@@ -492,6 +532,7 @@
                                     <constraint firstItem="pFD-qU-zeB" firstAttribute="leading" secondItem="DEx-nF-HvP" secondAttribute="leading" constant="25" id="X3U-RD-flB"/>
                                     <constraint firstItem="n3c-S5-PRJ" firstAttribute="leading" secondItem="DEx-nF-HvP" secondAttribute="leading" constant="25" id="eJ2-n9-VYo"/>
                                     <constraint firstItem="EI1-aA-lCm" firstAttribute="centerY" secondItem="DEx-nF-HvP" secondAttribute="centerY" id="qBo-Kt-L8h"/>
+                                    <constraint firstItem="Z67-xQ-6a7" firstAttribute="trailing" secondItem="pFD-qU-zeB" secondAttribute="trailing" id="qbJ-GF-Nns"/>
                                     <constraint firstItem="de3-qS-h3T" firstAttribute="width" secondItem="0Yx-gq-jpZ" secondAttribute="width" id="quy-9d-63b"/>
                                     <constraint firstItem="gfq-o1-Fua" firstAttribute="top" secondItem="n3c-S5-PRJ" secondAttribute="bottom" constant="15" id="yl2-7O-Ggy"/>
                                     <constraint firstItem="EI1-aA-lCm" firstAttribute="height" secondItem="de3-qS-h3T" secondAttribute="height" id="zyR-pU-Tc4"/>
