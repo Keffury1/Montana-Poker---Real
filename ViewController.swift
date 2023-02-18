@@ -69,7 +69,7 @@ class ViewController: UIViewController {
         logoImageView.layer.cornerRadius = 10.0
         cleanSlate()
         setupButtonCorners([deckButton, flopButton])
-        deckButton.setBackgroundImage(UIImage(named: "Red"), for: .normal)
+        deckButton.setBackgroundImage(UIImage(named: "Blue"), for: .normal)
         setupButtonCorners(bottomRow1Cards)
         setupButtonCorners(bottomRow2Cards)
         setupButtonCorners(bottomRow3Cards)
